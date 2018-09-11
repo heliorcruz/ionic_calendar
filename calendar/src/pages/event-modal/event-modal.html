@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="select()">
+        <ion-icon name="checkmark-circle"></ion-icon>
+      </button>
+    </ion-buttons>   
+    <ion-title>
+      {{ viewTitle }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+  <calendar [eventSource]="eventSource"
+          [calendarMode]="calendar.mode"
+          [currentDate]="calendar.currentDate"
+          [markDisabled]="markDisabled"
+          [locale]="calendar.locale"         
+          [noEventsLabel] = "calendar.noEventsLabel"
+          (onEventSelected)="onEventSelected($event)"
+          (onTitleChanged)="onViewTitleChanged($event)"
+          (onTimeSelected)="onTimeSelected($event)"
+          step="30"
+          class="calendar">
+  </calendar>
+  </ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Agenda
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addEvent()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="Title" [(ngModel)]="event.title"></ion-input>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label>Data</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" disabled  pickerFormat="MMM D" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+  </ion-list>
+ 
+  <button ion-button full icon-left (click)="save()">
+    <ion-icon name="checkmark"></ion-icon> Salvar
+  </button>
+</ion-content>
